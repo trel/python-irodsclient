@@ -40,10 +40,17 @@ setup(
         "Operating System :: POSIX :: Linux",
     ],
     packages=find_packages(),
+    entry_points={
+        "console_scripts": [
+            "irods = irods.irods_cli:the_cli",
+        ],
+    },
     include_package_data=True,
     install_requires=[
-        "PrettyTable>=0.7.2",
+        "click",
+        "click-aliases",
         "defusedxml",
+        "PrettyTable>=0.7.2",
     ],
     extras_require={"tests": ["unittest-xml-reporting"]},  # for xmlrunner
 )
